@@ -34,7 +34,8 @@ public class BikeRepository {
 		ResultSet resultSet = statement.executeQuery();
 		Bike bike = new Bike();
 		while (resultSet.next()) {
-
+			//here we have to set values to related object
+			
 		}
 		connection.close();
 		return bike;
