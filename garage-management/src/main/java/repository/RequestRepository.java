@@ -31,7 +31,10 @@ public class RequestRepository {
 		ResultSet resultSet = statement.executeQuery();
 		Request request = new Request();
 		while (resultSet.next()) {
-
+			request.setRequest_id(resultSet.getInt(1));
+			request.setBike_id(resultSet.getInt(2));
+			request.setStatus(resultSet.getString(3));
+			request.setDescription(resultSet.getString(4));
 		}
 		connection.close();
 		return request;
@@ -43,7 +46,12 @@ public class RequestRepository {
 		ResultSet resultSet = statement.executeQuery();
 		List<Request> requests = new ArrayList<Request>();
 		while (resultSet.next()) {
-
+			Request request =  new Request();
+			request.setRequest_id(resultSet.getInt(1));
+			request.setBike_id(resultSet.getInt(2));
+			request.setStatus(resultSet.getString(3));
+			request.setDescription(resultSet.getString(4));
+			requests.add(request);
 		}
 		connection.close();
 		return requests;
