@@ -34,7 +34,12 @@ public class AssignmentRepository {
 		ResultSet resultSet = statement.executeQuery();
 		Assignment assignment = new Assignment();
 		while (resultSet.next()) {
-
+			assignment.setAssignment_id(resultSet.getInt(1));
+				assignment.setRequest_id(resultSet.getInt(2));
+				assignment.setTechnician_id(resultSet.getInt(3));
+				assignment.setPart_id(resultSet.getInt(4));
+				assignment.setStatus(resultSet.getString(5));
+				assignment.setDate(resultSet.getString(6));
 		}
 		connection.close();
 		return assignment;
@@ -46,7 +51,14 @@ public class AssignmentRepository {
 		ResultSet resultSet = statement.executeQuery();
 		List<Assignment> assignments =  new ArrayList<Assignment>();
 		while (resultSet.next()) {
-			
+			Assignment assignment = new Assignment();
+			assignment.setAssignment_id(resultSet.getInt(1));
+			assignment.setRequest_id(resultSet.getInt(2));
+			assignment.setTechnician_id(resultSet.getInt(3));
+			assignment.setPart_id(resultSet.getInt(4));
+			assignment.setStatus(resultSet.getString(5));
+			assignment.setDate(resultSet.getString(6));
+			assignments.add(assignment);
 		}
 		connection.close();
 		return assignments;
