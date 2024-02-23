@@ -19,7 +19,12 @@ public class TechnicianRepository {
 		ResultSet resultSet = statement.executeQuery();
 		List<Technician> technicians = new ArrayList<Technician>();
 		while (resultSet.next()) {
-
+			Technician technician =  new Technician();
+			technician.setTechnician_id(resultSet.getInt(1));
+			technician.setFirst_name(resultSet.getString(2));
+			technician.setLast_name(resultSet.getString(3));
+			technician.setSpecialization(resultSet.getString(4));
+			technicians.add(technician);
 		}
 		connection.close();
 		return technicians;
@@ -54,7 +59,10 @@ public class TechnicianRepository {
 		ResultSet resultSet = statement.executeQuery();
 		Technician technician = new Technician();
 		while (resultSet.next()) {
-
+			technician.setTechnician_id(resultSet.getInt(1));
+			technician.setFirst_name(resultSet.getString(2));
+			technician.setLast_name(resultSet.getString(3));
+			technician.setSpecialization(resultSet.getString(4));
 		}
 		connection.close();
 		return technician;
