@@ -34,7 +34,12 @@ public class customerRepository {
 		ResultSet resultSet = statement.executeQuery();
 		Customer customer = new Customer();
 		while (resultSet.next()) {
-
+			customer.setCustomer_id(resultSet.getInt(1));
+			customer.setFirst_name(resultSet.getString(2));
+			customer.setLast_name(resultSet.getString(3));
+			customer.setEmail(resultSet.getString(4));
+			customer.setAddress(resultSet.getString(5));
+			customer.setPhone(resultSet.getLong(6));
 		}
 		connection.close();
 		return customer;
@@ -46,7 +51,14 @@ public class customerRepository {
 		ResultSet resultSet = statement.executeQuery();
 		List<Customer> customers = new ArrayList<Customer>();
 		while (resultSet.next()) {
-
+			Customer customer =  new Customer();
+			customer.setCustomer_id(resultSet.getInt(1));
+			customer.setFirst_name(resultSet.getString(2));
+			customer.setLast_name(resultSet.getString(3));
+			customer.setEmail(resultSet.getString(4));
+			customer.setAddress(resultSet.getString(5));
+			customer.setPhone(resultSet.getLong(6));
+			customers.add(customer);
 		}
 		return customers;
 	}
