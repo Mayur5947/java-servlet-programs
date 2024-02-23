@@ -35,7 +35,13 @@ public class BikeRepository {
 		Bike bike = new Bike();
 		while (resultSet.next()) {
 			//here we have to set values to related object
-			
+			bike.setBike_id(resultSet.getInt(1));
+			bike.setCustomer_id(resultSet.getInt(2));
+			bike.setMake(resultSet.getString(3));
+			bike.setModel(resultSet.getString(4));
+			bike.setColor(resultSet.getString(5));
+			bike.setNumber_plate(resultSet.getString(6));
+			bike.setYear(resultSet.getInt(7));
 		}
 		connection.close();
 		return bike;
@@ -47,7 +53,15 @@ public class BikeRepository {
 		ResultSet resultSet = statement.executeQuery();
 		List<Bike> bikes = new ArrayList<Bike>();
 		while (resultSet.next()) {
-
+			Bike bike =  new Bike();
+			bike.setBike_id(resultSet.getInt(1));
+			bike.setCustomer_id(resultSet.getInt(2));
+			bike.setMake(resultSet.getString(3));
+			bike.setModel(resultSet.getString(4));
+			bike.setColor(resultSet.getString(5));
+			bike.setNumber_plate(resultSet.getString(6));
+			bike.setYear(resultSet.getInt(7));
+			bikes.add(bike);
 		}
 		connection.close();
 		return bikes;
