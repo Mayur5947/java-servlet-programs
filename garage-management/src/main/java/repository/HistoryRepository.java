@@ -32,7 +32,12 @@ public class HistoryRepository {
 		ResultSet resultSet = statement.executeQuery();
 		History history =  new History();
 		while(resultSet.next()) {
-	
+			history.setHistory_id(resultSet.getInt(1));
+			history.setRequest_id(resultSet.getInt(2));
+			history.setTechnician_id(resultSet.getInt(3));
+			history.setPart_id(resultSet.getInt(4));
+			history.setDate(resultSet.getString(5));
+			history.setComments(resultSet.getString(6));
 		}
 		connection.close();
 		return history;
@@ -44,7 +49,14 @@ public class HistoryRepository {
 		ResultSet resultSet = statement.executeQuery();
 		List<History> histories =  new  ArrayList<History>();
 		while(resultSet.next()) {
-
+			History history =  new History();
+			history.setHistory_id(resultSet.getInt(1));
+			history.setRequest_id(resultSet.getInt(2));
+			history.setTechnician_id(resultSet.getInt(3));
+			history.setPart_id(resultSet.getInt(4));
+			history.setDate(resultSet.getString(5));
+			history.setComments(resultSet.getString(6));
+			histories.add(history);
 		}
 		connection.close();
 		return histories;
