@@ -10,10 +10,15 @@
 	
 	<center>
 
+<form action="request" method="get">
+				
+					<input type="hidden" id="method_name" value="get">
+					<button>view all requests</button>
+				</form>
 		<h2 align="centre">
 			<a align="centre" href="add-request.jsp"><button>add request</button></a> 
 			<a align="centre" href="update-request.jsp"><button>update request</button></a> 
-			<a align="centre" href="view-all-requests.jsp"><button>view requests</button></a> 
+			
 		</h2>
 	</center>
 </body>
