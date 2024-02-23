@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-	<form action="request" method="post">
+	<form action="technician" method="post">
 			<fieldset style="width: 25%">
 
 				   <input type="hidden" id="method_name" name="method_name" value="put">
