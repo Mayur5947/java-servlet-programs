@@ -7,7 +7,7 @@
 <title>add part</title>
 </head>
 <body>
-	<form action="part" method="post">
+	<form action="parts" method="post">
 			<fieldset style="width: 25%">
 
 				   <input type="hidden" id="method_name" name="method_name" value="post">

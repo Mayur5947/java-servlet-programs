@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Assignment;
 import service.AssignmentService;
 
-@WebServlet("/assignmnet/assignment")
+@WebServlet("/assignment/assignment")
 public class AssignmentController extends HttpServlet {
 	AssignmentService assignmentService = new AssignmentService();
 

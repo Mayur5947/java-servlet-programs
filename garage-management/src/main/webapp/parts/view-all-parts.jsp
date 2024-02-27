@@ -1,26 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	
-	<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
 <%@page import="model.*"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -29,9 +9,10 @@
 <title>all data</title>
 </head>
 <body>
-	<%
-		List< Parts> parts = (List) request.getAttribute("list");
-	%>
+	
+		<% List<Parts> list = (List)request.getAttribute("list");%>
+	   
+	 
 	<table align="center" border="solid" cellspaccing="0px" cellpadding="20px">
 		<tr>
 
@@ -41,10 +22,9 @@
 			<th>price</th>
 		</tr>
 		<%
-			for (Parts part : parts) {
+			for(Parts part : list) {
 		%>
 		<tr>
-
 			<td><%=part.getPart_id()%></td>
 			<td><%=part.getPart_name()%></td>
 			<td><%=part.getQty_available()%></td>
@@ -57,10 +37,5 @@
 
 
 	</table>
-</body>
-</html>
-</body>
-</html>
-	
 </body>
 </html>

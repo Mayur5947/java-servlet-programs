@@ -30,8 +30,12 @@ public class PartsRepository {
 		statement.setInt(1, part_id);
 		ResultSet resultSet = statement.executeQuery();
 		Parts parts = new Parts();
-		while (resultSet.next()) {
-
+		while (resultSet.next()) {	
+			parts.setPart_id(resultSet.getInt(1));
+			parts.setPart_name(resultSet.getString(2));
+			parts.setPrice(resultSet.getInt(4));
+			parts.setQty_available(resultSet.getInt(3));
+			
 		}
 		connection.close();
 		return parts;
@@ -43,7 +47,12 @@ public class PartsRepository {
 		ResultSet resultSet = statement.executeQuery();
 		List<Parts> list = new ArrayList<Parts>();
 		while (resultSet.next()) {
-
+			Parts part = new Parts();
+			part.setPart_id(resultSet.getInt(1));
+			part.setPart_name(resultSet.getString(2));
+			part.setPrice(resultSet.getInt(4));
+			part.setQty_available(resultSet.getInt(3));
+			list.add(part);
 		}
 		connection.close();
 		return list;
